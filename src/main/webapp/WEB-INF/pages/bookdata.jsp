@@ -6,6 +6,7 @@
 <html>
 <head>
     <title>BookData</title>
+    <link href="<c:url value="/resources/style.css" />" rel="stylesheet">
 </head>
 <body>
 <p align="center"><a href="<c:url value="/books"/>">Back to books list</a></p>
