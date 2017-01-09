@@ -38,7 +38,7 @@ public class BookDaoImpl implements BookDao {
         Session session = this.sessionFactory.getCurrentSession();
         Book book = (Book) session.load(Book.class, new Integer(id));
 
-        if(book!=null){
+        if (book != null) {
             session.delete(book);
         }
         logger.info("Book successfully removed. Book details: " + book);
@@ -46,7 +46,7 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public Book getBookById(int id) {
-        Session session =this.sessionFactory.getCurrentSession();
+        Session session = this.sessionFactory.getCurrentSession();
         Book book = (Book) session.load(Book.class, new Integer(id));
         logger.info("Book successfully loaded. Book details: " + book);
 
@@ -59,7 +59,7 @@ public class BookDaoImpl implements BookDao {
         Session session = this.sessionFactory.getCurrentSession();
         List<Book> bookList = session.createQuery("from Book order by id").list();
 
-        for(Book book: bookList){
+        for (Book book : bookList) {
             logger.info("Book list: " + book);
         }
 
