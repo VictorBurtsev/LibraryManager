@@ -6,6 +6,7 @@
 <html>
 <head>
     <title>Books Page</title>
+    <link href="<c:url value="/resources/style.css" />" rel="stylesheet">
 </head>
 <body>
 <p align="center"><a href="../../index.jsp">Back to main menu</a></p>
