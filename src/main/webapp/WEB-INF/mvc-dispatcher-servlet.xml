@@ -12,6 +12,10 @@
 
     <context:component-scan base-package="ru.burtsev.librarymanager"/>
 
+    <context:component-scan base-package="ru.burtsev.librarymanager"/>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
@@ -22,7 +26,7 @@
         <constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
     </bean>
 
-    <bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" id="dataSource">
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="org.postgresql.Driver"/>
         <property name="url"
                   value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>
@@ -40,16 +44,14 @@
     <bean id="dataSource1" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
         <property name="driverClassName" value="org.postgresql.Driver"/>
-        <property name="url"
-                  value="jdbc:postgresql://localhost:5432/librarymanager"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/librarymanager"/>
         <property name="username" value="postgres"/>
         <property name="password" value="test"/>
     </bean>
     -->
 
     <!-- Hibernate 4 SessionFactory Bean definition -->
-    <bean id="hibernate4AnnotatedSessionFactory"
-          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+    <bean id="hibernate4AnnotatedSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
@@ -58,8 +60,7 @@
         </property>
         <property name="hibernateProperties">
             <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL82Dialect
-                </prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL82Dialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
             </props>
         </property>
@@ -73,10 +74,6 @@
     <bean id="bookService" class="ru.burtsev.librarymanager.service.BookServiceImpl">
         <property name="bookDao" ref="bookDao"/>
     </bean>
-
-    <context:component-scan base-package="ru.burtsev.librarymanager"/>
-
-    <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
