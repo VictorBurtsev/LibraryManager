@@ -14,5 +14,3 @@ INSERT INTO books (title, author, price, pages) VALUES ('Fourth Book', 'Fourth A
 INSERT INTO books (title, author, price, pages) VALUES ('Fifth Book', 'Fifth Author', '80000', '251');
 INSERT INTO books (title, author, price, pages) VALUES ('Sixth Book', 'Sixth Author', '50000', '250');
 INSERT INTO books (title, author, price, pages) VALUES ('Seven Book', 'Seven Author', '150000', '200');
-
-select * from books
