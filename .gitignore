@@ -1,0 +1,9 @@
+
+.DS_Store
+.idea/
+*.log
+*.iml
+src/.DS_Store
+src/main/.DS_Store
+src/main/java/.DS_Store
+target/
