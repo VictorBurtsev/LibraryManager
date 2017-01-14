@@ -1,10 +1,10 @@
-package ru.burtsev.librarymanager.service;
+package com.herokuapp.librarymanager.dao;
 
-import ru.burtsev.librarymanager.model.Book;
+import com.herokuapp.librarymanager.model.Book;
 
 import java.util.List;
 
-public interface BookService {
+public interface BookDao {
     public void addBook(Book book);
 
     public void updateBook(Book book);

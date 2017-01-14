@@ -1,7 +1,7 @@
-package ru.burtsev.librarymanager.controller;
+package com.herokuapp.librarymanager.controller;
 
-import ru.burtsev.librarymanager.model.Book;
-import ru.burtsev.librarymanager.service.BookService;
+import com.herokuapp.librarymanager.model.Book;
+import com.herokuapp.librarymanager.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;

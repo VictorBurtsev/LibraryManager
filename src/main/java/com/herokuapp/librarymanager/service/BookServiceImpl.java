@@ -1,7 +1,7 @@
-package ru.burtsev.librarymanager.service;
+package com.herokuapp.librarymanager.service;
 
-import ru.burtsev.librarymanager.dao.BookDao;
-import ru.burtsev.librarymanager.model.Book;
+import com.herokuapp.librarymanager.dao.BookDao;
+import com.herokuapp.librarymanager.model.Book;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

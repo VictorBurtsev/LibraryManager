@@ -1,4 +1,4 @@
-package ru.burtsev.librarymanager;
+package com.herokuapp.librarymanager;
 
 import org.junit.Before;
 import org.junit.Test;

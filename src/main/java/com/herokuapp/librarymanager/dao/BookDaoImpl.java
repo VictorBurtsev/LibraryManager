@@ -1,6 +1,6 @@
-package ru.burtsev.librarymanager.dao;
+package com.herokuapp.librarymanager.dao;
 
-import ru.burtsev.librarymanager.model.Book;
+import com.herokuapp.librarymanager.model.Book;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;

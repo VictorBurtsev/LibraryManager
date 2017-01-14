@@ -1,4 +1,4 @@
-package ru.burtsev.librarymanager.model;
+package com.herokuapp.librarymanager.model;
 
 import javax.persistence.*;
 
