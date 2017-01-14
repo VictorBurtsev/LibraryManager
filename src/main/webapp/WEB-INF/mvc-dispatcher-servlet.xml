@@ -10,9 +10,9 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="ru.burtsev.librarymanager"/>
+    <context:component-scan base-package="com.herokuapp.librarymanager"/>
 
-    <context:component-scan base-package="ru.burtsev.librarymanager"/>
+    <context:component-scan base-package="com.herokuapp.librarymanager"/>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
@@ -55,7 +55,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value>ru.burtsev.librarymanager.model.Book</value>
+                <value>com.herokuapp.librarymanager.model.Book</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -67,11 +67,11 @@
     </bean>
 
     <!--BookDao and BookService beans-->
-    <bean id="bookDao" class="ru.burtsev.librarymanager.dao.BookDaoImpl">
+    <bean id="bookDao" class="com.herokuapp.librarymanager.dao.BookDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="bookService" class="ru.burtsev.librarymanager.service.BookServiceImpl">
+    <bean id="bookService" class="com.herokuapp.librarymanager.service.BookServiceImpl">
         <property name="bookDao" ref="bookDao"/>
     </bean>
 
