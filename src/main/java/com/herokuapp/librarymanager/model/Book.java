@@ -1,14 +1,16 @@
 package com.herokuapp.librarymanager.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name = "books")
 public class Book {
     @Id
     @SequenceGenerator(name = "books_id_seq", sequenceName = "books_id_seq", allocationSize = 1)
     @GeneratedValue(generator = "books_id_seq", strategy = GenerationType.SEQUENCE)
-
     @Column(name = "id")
     private int id;
 
@@ -23,46 +25,6 @@ public class Book {
 
     @Column(name = "pages")
     private int pages;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getBookTitle() {
-        return bookTitle;
-    }
-
-    public void setBookTitle(String bookTitle) {
-        this.bookTitle = bookTitle;
-    }
-
-    public String getBookAuthor() {
-        return bookAuthor;
-    }
-
-    public void setBookAuthor(String bookAuthor) {
-        this.bookAuthor = bookAuthor;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public int getPages() {
-        return pages;
-    }
-
-    public void setPages(int pages) {
-        this.pages = pages;
-    }
 
     @Override
     public String toString() {
