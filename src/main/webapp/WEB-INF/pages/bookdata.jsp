@@ -22,8 +22,8 @@
     </tr>
     <tr>
         <td>${book.id}</td>
-        <td>${book.bookTitle}</td>
-        <td>${book.bookAuthor}</td>
+        <td>${book.title}</td>
+        <td>${book.author}</td>
         <td>${book.price/100}${book.price%100}</td>
         <td>${book.pages}</td>
     </tr>
