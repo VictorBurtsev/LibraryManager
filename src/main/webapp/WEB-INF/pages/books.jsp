@@ -27,8 +27,8 @@
         <c:forEach items="${listBooks}" var="book">
             <tr>
                 <td>${book.id}</td>
-                <td><a href="/bookdata/${book.id}">${book.bookTitle}</a></td>
-                <td>${book.bookAuthor}</td>
+                <td><a href="/bookdata/${book.id}">${book.title}</a></td>
+                <td>${book.author}</td>
                 <td>${book.price/100}${book.price%100}</td>
                 <td>${book.pages}</td>
                 <td><a href="<c:url value='/edit/${book.id}'/>">Edit</a></td>
@@ -42,17 +42,17 @@
 
 <form:form action="${addAction}" commandName="book">
     <table align="center">
-        <c:if test="${!empty book.bookTitle}">
+        <c:if test="${!empty book.title}">
             <tr>
                 <h1 align="center"><spring:message text="Book edit"/></h1>
             </tr>
         </c:if>
-        <c:if test="${empty book.bookTitle}">
+        <c:if test="${empty book.title}">
             <tr>
                 <h1 align="center"><spring:message text="Book add"/></h1>
             </tr>
         </c:if>
-        <c:if test="${!empty book.bookTitle}">
+        <c:if test="${!empty book.title}">
             <tr>
                 <td>
                     <form:label path="id">
@@ -67,22 +67,22 @@
         </c:if>
         <tr>
             <td>
-                <form:label path="bookTitle">
+                <form:label path="title">
                     <spring:message text="Title"/>
                 </form:label>
             </td>
             <td>
-                <form:input path="bookTitle"/>
+                <form:input path="title"/>
             </td>
         </tr>
         <tr>
             <td>
-                <form:label path="bookAuthor">
+                <form:label path="author">
                     <spring:message text="Author"/>
                 </form:label>
             </td>
             <td>
-                <form:input path="bookAuthor"/>
+                <form:input path="author"/>
             </td>
         </tr>
         <tr>
@@ -108,11 +108,11 @@
 
         <tr>
             <td colspan="2">
-                <c:if test="${!empty book.bookTitle}">
+                <c:if test="${!empty book.title}">
                     <input type="submit"
                            value="<spring:message text="Edit Book"/>"/>
                 </c:if>
-                <c:if test="${empty book.bookTitle}">
+                <c:if test="${empty book.title}">
                     <input type="submit"
                            value="<spring:message text="Add Book"/>"/>
                 </c:if>
